@@ -1,0 +1,11 @@
+@"
+node_modules
+dist
+.grok
+screenshots
+.tanstack
+android/build
+android/app/build
+android/.gradle
+android/local.properties
+"@ | Set-Content .gitignore

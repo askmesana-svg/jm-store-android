@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+  --color-cream: #fbf6ec;
+  --color-ink: #211f1a;
+  --color-surface: #ffffff;
+  --color-line: #211f1a24;
+  --color-teal: #0b4a45;
+  --color-teal-deep: #083733;
+  --color-marigold: #e7a233;
+  --color-brick: #b4432e;
+  --color-ivory: #fbf6ec;
+}
+
+.dark {
+  --color-cream: #15181a;
+  --color-ink: #edeae6;
+  --color-surface: #202427;
+  --color-line: #ffffff24;
+  color-scheme: dark;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.tabbar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.z-checkout {
+  z-index: 60;
+}
+
+.z-lightbox {
+  z-index: 70;
+}
+
+.sheet-pad {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
